@@ -51,23 +51,41 @@ function getRandomQuote() {
   // 1. Create a variable that generates a random number
   // between zero and the last index in the `quotes` array
   const randomNumber = Math.ceil (Math.random() * quotes.length -1 );
-  console.log(randomNumber);
-  
+   
   // 2. Use the random number variable and bracket notation 
   // to grab a random object from the `quotes` array, and 
   // store it in a variable
   let randomQuote = quotes[randomNumber]
-  console.log(randomQuote);
 
   // 3. Return the variable storing the random quote object
   return randomQuote;
 }
-getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
+function printQuote(){
 
+  let quotes = getRandomQuote();
+  let element ='<p class="quote">' + quotes.quote + '</p>';
+  element +=  '<p class="source">' + quotes.source;
+
+if (quotes.citation) {
+  // Code to run if your condition evaluates to true
+  element += '<span class="citation">' + quotes.citation + '</span>';
+}
+if(quotes.year){
+  element += `<span class='year'>${quotes.year}</span>`;
+}
+
+element += `</p>`;
+
+document.getElementById('quote-box').innerHTML = element; 
+
+console.log(quotes);
+console.log(element);
+
+}
 
 
 /***
