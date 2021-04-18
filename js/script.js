@@ -1,11 +1,7 @@
 /******************************************
-Treehouse FSJS Techdegree:
+FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
-console.log('test');
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
@@ -46,23 +42,26 @@ let quotes = [
 
 /***
  * `getRandomQuote` function
-***/
+ * generates a random number 
+ * between zero and the last index in the `quotes` array
+ * ans use this random number
+ * to grab a random quote from the array
+ ***/
 function getRandomQuote() {
-  // 1. Create a variable that generates a random number
-  // between zero and the last index in the `quotes` array
+
   const randomNumber = Math.ceil (Math.random() * quotes.length -1 );
-   
-  // 2. Use the random number variable and bracket notation 
-  // to grab a random object from the `quotes` array, and 
-  // store it in a variable
+
   let randomQuote = quotes[randomNumber]
 
-  // 3. Return the variable storing the random quote object
+  // Return the random quote object
   return randomQuote;
 }
 
 /***
  * `printQuote` function
+ * calls the getRandomQuote()
+ * initiates the elements for the HTML
+ * element is the complete HTML 
 ***/
 function printQuote(){
 
@@ -71,7 +70,6 @@ function printQuote(){
   element +=  '<p class="source">' + quotes.source;
 
 if (quotes.citation) {
-  // Code to run if your condition evaluates to true
   element += '<span class="citation">' + quotes.citation + '</span>';
 }
 if(quotes.year){
@@ -82,8 +80,6 @@ element += `</p>`;
 
 document.getElementById('quote-box').innerHTML = element; 
 
-console.log(quotes);
-console.log(element);
 
 }
 

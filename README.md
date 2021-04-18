@@ -1,2 +1,2 @@
 # 1.Random-quote-generator
- Random quote generator, which displays quotations on a page, and can be controlled by the user.
+ Fun Random quote generator, that  displays quotations on a page, and can show different quotes by clicking the button "Show another quote".
